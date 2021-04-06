@@ -42,7 +42,6 @@ const findMax = (matrix) => {
   })
 
   const result =maxInArray(arr);
-
   return result;
 };
 
