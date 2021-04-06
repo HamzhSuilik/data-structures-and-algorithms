@@ -86,9 +86,13 @@ const totalSum = (matrix) => {
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
-You friend Pat has a chain of stores around the greater Seattle area. He specializes in selling salmon cookies. Pat has data for the hourly sales of cookies per hour for each store. He wants to create an array of the total number of cookies sold per hour for all of his stores combined.
+You friend Pat has a chain of stores around the greater Seattle area. He specializes in selling salmon cookies.
+ Pat has data for the hourly sales of cookies per hour for each store. He wants to create an array of the total number
+  of cookies sold per hour for all of his stores combined.
 
-Write a function named grandTotal that adds up the cookies sales for each hour of operation for all of the stores combined. For example, the first element in the hourlySales array should be the sum of the cookies sold in the 9:00 a.m. hour at all five stores combined.
+Write a function named grandTotal that adds up the cookies sales for each hour of operation for
+ all of the stores combined. For example, the first element in the hourlySales array should be
+  the sum of the cookies sold in the 9:00 a.m. hour at all five stores combined.
 
 For this example, the total at 9:00 a.m. is 17 + 26 + 7 + 5 + 33, or 88 total cookies.
 
@@ -106,8 +110,15 @@ const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
-  // Solution code here...
-
+  const arr = [];
+  hoursOpen.forEach((element,index)=>{
+    let sum = 0;
+    stores.forEach(store=>{
+      sum = sum + store[index];
+    })
+    arr.push(sum);
+  })
+return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -117,11 +128,17 @@ Pat has decided that he would also like to organize his data as objects containi
 
 Here is sample data for the 9:00 sales: { sales: '88 cookies', time: '9 a.m.' }.
 
-Write a function named salesData that uses forEach to iterate over the hourlySales array and create an object for each hour. Return an array of the formatted data.
+Write a function named salesData that uses forEach to iterate over the hourlySales array and create an 
+object for each hour. Return an array of the formatted data.
 ------------------------------------------------------------------------------------------------ */
 
 const salesData = (hours, data) => {
-  // Solution code here...
+  const arr =[];
+
+ hours.forEach((element,index)=>{
+   arr.push({sales: `${data[index]} cookies` , time:`${hours[index]}`});
+ });
+ return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -146,7 +163,13 @@ const errands = [
 ];
 
 const howManyTreats = (arr) => {
-  // Solution code here...
+  let sum=0;
+  arr.forEach(element=>{
+    element.items.forEach(element=>{
+      if(element.name==='Treats'){sum=element.quantity}
+    })
+  })
+  return sum;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -281,6 +304,7 @@ describe('Testing challenge 4', () => {
 
 describe('Testing challenge 5', () => {
   test('It should create an object of data for each store', () => {
+    
     expect(salesData(hoursOpen, grandTotal(cookieStores))).toStrictEqual([
       { sales: '88 cookies', time: '9 a.m.' },
       { sales: '153 cookies', time: '10 a.m.' },
