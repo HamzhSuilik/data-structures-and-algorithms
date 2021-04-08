@@ -14,7 +14,7 @@ You can assume that neither firstName nor lastName will be blank
 const toLastNames = people => {
   let arr = [];
   people.map(element => {
-    arr.push(element.firstName+' '+element.lastName);
+    arr.push(element.firstName + ' ' + element.lastName);
   });
   return arr;
 };
@@ -28,10 +28,10 @@ If the PIN is four numerical digits long, return true. Otherwise, return false.
 ------------------------------------------------------------------------------------------------ */
 
 const validatePin = (pin) => {
-  pin=pin+'';
+  pin = pin + '';
   const arr = pin.match(/[0-9]/g) || [];
 
-  if(arr.length===4 && pin.length===4){
+  if (arr.length === 4 && pin.length === 4) {
     return true;
   }
 
@@ -47,11 +47,11 @@ If the word is between 5 and 10 characters long, return true. Otherwise, return 
 ------------------------------------------------------------------------------------------------ */
 
 const validateWord = (word) => {
-  
-  word=word+'';
+
+  word = word + '';
   const arr = word.match(/[A-Za-z]/g) || [];
 
-  if(arr.length>4 && arr.length<11){
+  if (arr.length > 4 && arr.length < 11) {
     return true;
   }
 
@@ -68,9 +68,9 @@ If it does, return true. If not, return false.
 ------------------------------------------------------------------------------------------------ */
 
 const hasNumber = (string) => {
-  string=string+'';
+  string = string + '';
   const arr = string.match(/([A-Za-z])([0-9])/g);
-  if (arr){
+  if (arr) {
     return true;
   }
   return false;
@@ -99,12 +99,12 @@ const validateEmail = (email) => {
   const check_3 = email.match(/([a-z]|[.])*[@]/g);
   let check_4;
   let check_dot = 0;
-  if(check_3){
+  if (check_3) {
     check_4 = check_3[0].match(/[.]/g) || [];
-    if(check_4.length < 2){
-      check_dot=check_4.length;
+    if (check_4.length < 2) {
+      check_dot = check_4.length;
       check_4 = true;
-    }else{
+    } else {
       check_4 = false;
     }
   }
@@ -113,15 +113,27 @@ const validateEmail = (email) => {
 
   let check_6 = email.match(/[.]/g) || [];
   check_6 = check_6.length;
-  if(check_6===(check_dot+1)){
-    check_dot=true;
-  }else{
-    check_dot=false;
+  if (check_6 === (check_dot + 1)) {
+    check_dot = true;
+  } else {
+    check_dot = false;
   }
 
-  if(check_dot &&check_1 && check_2 && check_3 && check_4 &&(!check_5)){
-    return true;
+  let email_check = false;
+  if (check_dot && check_1 && check_2 && check_3 && check_4 && (!check_5)) {
+    email_check = true;
   }
+
+  const check_33 = email.match(/[a-z]/g);
+
+  if (email_check) {
+    if (check_33[check_33.length - 1] === 'm' || check_33[check_33.length - 1] === 'g' || check_33[check_33.length - 1] === 't') {
+      return true;
+    }
+  }
+
+
+
   return false;
 };
 
@@ -148,7 +160,47 @@ Return either true or false.
 ------------------------------------------------------------------------------------------------ */
 
 const validatePhoneNumber = (phoneNumber) => {
-  // Solution code here...
+  const str1 = phoneNumber.search(/[(]+[0-9]+[)]+[ ]+[0-9]+[-]+[0-9]/g);
+  const str2 = phoneNumber.search(/[(]+[0-9]+[)]+[0-9]+[ ]+[0-9]/g);
+  const str4 = phoneNumber.search(/[0-9]+[-]+[0-9]/g);
+  const str5 = phoneNumber.search(/[0-9]+[-]+[0-9]+[ ]+[0-9]/g);
+  const str6 = phoneNumber.search(/[0-9]+[-]+[0-9]+[-]+[0-9]/g);
+  const str7 = phoneNumber.search(/[0-9]+[ ]+[0-9]+[ ]+[0-9]/g);
+  const str8 = phoneNumber.search(/[0-9]+[ ]+[0-9]+[ ]+[0-9]/g);
+  const str9 = phoneNumber.search(/[0-9]/g);
+  const str3 = phoneNumber.search(/[0-9]+[ ]+[0-9]+[-]+[0-9]/g);
+
+  
+
+  const check = !str1 || !str2 || !str3 || !str4 || !str5 || !str6 || !str7 || !str8 || !str9 ;
+
+  const extra1 =  phoneNumber.match(/[a-z]/g);
+  if(extra1){
+    return false;
+  }
+
+  const extra2 =  phoneNumber.match(/./g);
+  const extra3 =  extra2[extra2.length-1].match(/[1-9]/g);
+  if(!extra3){
+    return false;
+  }
+
+  const extra4 =  phoneNumber.match(/[--]/g);
+  if(extra4){
+    return false;
+  }
+
+  const extra5 =  phoneNumber.match(/[ ]/i);
+  const extra6 =  phoneNumber.match(/[-]/g);
+
+  if((!extra5 && !extra6)){
+    return false;
+  }
+
+  if(check){
+    return true;
+  }
+  return false;
 };
 
 /* ------------------------------------------------------------------------------------------------
