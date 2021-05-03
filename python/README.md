@@ -1,5 +1,15 @@
 # Data Structures and Algorithms
 
+### 401 Data Structures, Code Challenges
+
+| Code Challenges                        | Status                |  Pull Request        |
+| ---------------------------------------| --------------------- |--------------------- |
+| Code Challenge: Class 01               |                       |        [Link]()      |
+| Code Challenge: Class 02               |                       |        [Link]()      |
+| Code Challenge: Class 03               |                       |        [Link]()      |
+| Code Challenge: Class 04               |                       |        [Link]()      |
+| Code Challenge: Class 05               |                       |        [Link]()      |
+
 ## Language: `Python`
 
 ### Folder and Challenge Setup
