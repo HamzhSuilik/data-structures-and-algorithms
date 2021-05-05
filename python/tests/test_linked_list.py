@@ -7,7 +7,3 @@ def test_import():
     assert LinkedList
 
 
-
-def test2 () :
-    assert True
-

@@ -21,6 +21,20 @@ def reverseArray (arr):
         length -=1
     return arr2
 `
+# BinarySearch
+# Challenge Summary
+Write a function called BinarySearch which takes in 2 parameters: a sorted array and the search key. Without utilizing any of the built-in methods available to your language, return the index of the array’s element that is equal to the search key, or -1 if the element does not exist.
+
+## Approach & Efficiency
+I used for loop to solve challenge
+
+## Solution
+using for loop array I search for key fro index zero to last item
+if for statement find the key into the array the function return this key
+if for statement didn't find key the function return -1
+
+# frame
+![image](white-bord/3.PNG?raw=true)
 
 
 | Code Challenges                        | Status                |  Pull Request        |
