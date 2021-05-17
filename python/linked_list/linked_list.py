@@ -96,6 +96,27 @@ class LinkedList:
             current_node=current_node.next
         return text
 
+    def kthFromEnd(self,k):
+      current_node =self.head
+      arr =[]
+      while current_node:
+        arr.append(current_node.data)
+        current_node=current_node.next
+
+      if type(k) is int:
+          if abs(k) != k:
+              return 'Not Exist'
+      else :
+          return 'Not Exist'
+
+      if k > len(arr)-1 :
+        return 'Not Exist'
+
+      return arr[len(arr)-1-k]
+
+
+
+
 
 # new_list = LinkedList()
 
@@ -103,15 +124,13 @@ class LinkedList:
 # new_list.append('2')
 # new_list.append('3')
 # new_list.append('4')
-# new_list.insertBefore('1','ahahah')
 # new_list.print_list()
 
+# print()
+# print('------------')
+# print()
 
-# print(new_list.show_all())
 
-# new_list = LinkedList()
-# new_list.append('1')
-# new_list.append('2')
-# new_list.append('3')
-# new_list.append('4')
-# print( new_list.show_all() )
+# print(new_list.kthFromEnd(2))
+
+
