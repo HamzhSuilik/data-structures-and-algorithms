@@ -2,6 +2,10 @@
 
 ### 401 Data Structures, Code Challenges
 
+## Code Challenge: Class 07
+### white-bord
+![image](white-bord/7.jpg?raw=true)
+
 # Reverse an Array
 we need a function , array function , for loop , list
 
