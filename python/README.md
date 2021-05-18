@@ -2,6 +2,10 @@
 
 ### 401 Data Structures, Code Challenges
 
+## Code Challenge: Class 08
+### white-bord
+![image](white-bord/8.jpg?raw=true)
+
 ## Code Challenge: Class 07
 ### white-bord
 ![image](white-bord/7.jpg?raw=true)
