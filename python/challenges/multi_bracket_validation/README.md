@@ -2,7 +2,7 @@
  write function should take a string as argument, and should return a boolean representing whether or not the brackets in the string are balanced
 
 ## Whiteboard Process
-![image](../white-bord/13.jpg?raw=true)
+![image](./../../white-bord/13.jpg?raw=true)
 
 ## Approach & Efficiency
 I used level system to solve the problem , I give 1 for [ , 2 for ( and 3 for {
