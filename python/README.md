@@ -2,6 +2,21 @@
 
 ### 401 Data Structures, Code Challenges
 
+## Code Challenge: Class 12
+
+## Whiteboard Process
+![image](white-bord/12.jpg?raw=true)
+
+## Approach & Efficiency
+I used class like Queue with principle first in first out
+the Big O :
+Time : O(n)
+Space : O(2n)
+
+## Solution
+check the animal type before do any process , if the animal is cat or dog add the animal in the last of the queue
+in dequeue start search from front of queue , then return the first wonted animal from front to rare
+
 ## Code Challenge: Class 08
 ### white-bord
 ![image](white-bord/8.jpg?raw=true)
