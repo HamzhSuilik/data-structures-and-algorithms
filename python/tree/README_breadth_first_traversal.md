@@ -2,7 +2,7 @@
 Write a breadth first traversal method which takes a Binary Tree as its unique input ,traverse the input tree using a Breadth-first approach, and return a list of the values in the tree in the order they were encountered.
 
 ## Whiteboard Process
-![image](../white-bord/12.jpg?raw=true)
+![image](../white-bord/17.jpg?raw=true)
 
 ## Approach & Efficiency
 **Big O :**
