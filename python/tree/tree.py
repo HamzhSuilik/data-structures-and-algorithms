@@ -111,6 +111,21 @@ class BinaryTree :
 
         return stack
 
+    def find_maximum_value (self) :
+        def walk(root,val):
+            if root.left:
+                if root.left.value > val :
+                    val = walk(root.left,root.left.value)
+                else :
+                    val = walk(root.left,val)
+            if root.right:
+                if root.right.value > val :
+                    val = walk(root.right,root.right.value)
+                else :
+                    val =walk(root.right,val)
+            return val
+        return walk(self.root,self.root.value)
+
 # Binary Search Tree (BST)
 class  BinarySearchTree :
     def __init__(self,root=None) :
@@ -157,6 +172,9 @@ class  BinarySearchTree :
                     pointer = pointer.right
             else :
                 return 'The value is already exists'
+
+
+
 
 
 if __name__ == "__main__":
