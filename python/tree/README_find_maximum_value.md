@@ -2,7 +2,7 @@
 Write an function called find-maximum-value. Without utilizing any of the built-in methods available to your language, return the maximum value stored in the tree.
 
 ## Whiteboard Process
-![image](./../../white-board/16.jpg?raw=true)
+![image](https://github.com/HamzhSuilik/data-structures-and-algorithms/blob/main/python/white-bord/16.jpg?raw=true)
 
 ## Approach  &  Efficiency
 **Big O :**
