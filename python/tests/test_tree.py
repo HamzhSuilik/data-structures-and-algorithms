@@ -1,10 +1,6 @@
 import pytest
 from tree.tree import BinaryTree , BinarySearchTree , TNode , Stack
 
-def test_1 (Tree):
-    actual = '0'
-    expected = '0'
-    assert actual == expected
 
 # Can successfully instantiate an empty tree
 def test_1 ():
