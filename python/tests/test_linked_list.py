@@ -1,102 +1,69 @@
 from linked_list.linked_list import LinkedList
 
-# from challenges.array_reverse.array_reverse import reverseArray
 
 
 def test_import():
     assert LinkedList
 
+
+# Can successfully instantiate an empty linked list
 def test_1 () :
     new_list = LinkedList()
-    new_list.append('1')
-    assert new_list.show_all() == '1-'
+    actual = new_list.__str__()
+    expected=' -> NULL'
+    assert actual == expected
 
+# Can properly insert into the linked list
 def test_2 () :
     new_list = LinkedList()
-    new_list.append('1')
-    new_list.append('2')
-    new_list.append('3')
-    new_list.append('4')
-    assert new_list.show_all() == '1-2-3-4-'
-
+    new_list.insert('a')
+    new_list.insert('b')
+    actual = new_list.__str__()
+    expected='{ a } -> { b } ->  -> NULL'
+    assert actual == expected
+# The head property will properly point to the first node in the linked list
 def test_3 () :
     new_list = LinkedList()
-    new_list.append('1')
-    new_list.append('2')
-    new_list.append('3')
-    new_list.append('4')
-    new_list.insertBefore('2','***')
-    assert new_list.show_all() == '1-***-2-3-4-'
-
+    new_list.insert('a')
+    new_list.insert('b')
+    actual = new_list.head.data
+    expected='a'
+    assert actual == expected
+# Can properly insert multiple nodes into the linked list
 def test_4 () :
     new_list = LinkedList()
-    new_list.append('1')
-    new_list.append('2')
-    new_list.append('3')
-    new_list.append('4')
-    new_list.insertBefore('1','***')
-    assert new_list.show_all() == '***-1-2-3-4-'
-
+    new_list.insert('a')
+    new_list.insert('b')
+    new_list.insert('c')
+    new_list.insert('d')
+    actual = new_list.__str__()
+    expected='{ a } -> { b } -> { c } -> { d } ->  -> NULL'
+    assert actual == expected
+# Will return true when finding a value within the linked list that exists
 def test_5 () :
     new_list = LinkedList()
-    new_list.append('1')
-    new_list.append('2')
-    new_list.append('3')
-    new_list.append('4')
-    new_list.insertAfter('1','***')
-    assert new_list.show_all() == '1-***-2-3-4-'
-
+    new_list.insert('a')
+    new_list.insert('b')
+    new_list.insert('c')
+    actual = new_list.includes('a')
+    expected= True
+    assert actual == expected
+# Will return false when searching for a value in the linked list that does not exist
 def test_6 () :
     new_list = LinkedList()
-    new_list.append('1')
-    new_list.append('2')
-    new_list.append('3')
-    new_list.append('4')
-    new_list.insertAfter('4','***')
-    assert new_list.show_all() == '1-2-3-4-***-'
-
-# code challenge 7 tests
-
-def test_1_code_challenge_7 () :
+    new_list.insert('a')
+    new_list.insert('b')
+    new_list.insert('c')
+    actual = new_list.includes('z')
+    expected= False
+    assert actual == expected
+# Can properly return a collection of all the values that exist in the linked list
+def test_7 () :
     new_list = LinkedList()
-    new_list.append('1')
-    new_list.append('2')
-    new_list.append('3')
-    new_list.append('4')
+    new_list.insert('a')
+    new_list.insert('b')
+    new_list.insert('c')
+    actual = new_list.__str__()
+    expected='{ a } -> { b } -> { c } ->  -> NULL'
+    assert actual == expected
 
-    assert new_list.kthFromEnd(7) == 'Not Exist'
-
-
-def test_2_code_challenge_7 () :
-    new_list = LinkedList()
-    new_list.append('1')
-    new_list.append('2')
-    new_list.append('3')
-    new_list.append('4')
-
-    assert new_list.kthFromEnd(4) == 'Not Exist'
-
-def test_3_code_challenge_7 () :
-    new_list = LinkedList()
-    new_list.append('1')
-    new_list.append('2')
-    new_list.append('3')
-    new_list.append('4')
-
-    assert new_list.kthFromEnd(-2) == 'Not Exist'
-
-def test_4_code_challenge_7 () :
-    new_list = LinkedList()
-    new_list.append('1')
-
-
-    assert new_list.kthFromEnd(0) == '1'
-
-def test_5_code_challenge_7 () :
-    new_list = LinkedList()
-    new_list.append('1')
-    new_list.append('2')
-    new_list.append('3')
-    new_list.append('4')
-
-    assert new_list.kthFromEnd(2) == '2'
