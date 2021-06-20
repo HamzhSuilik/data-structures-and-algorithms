@@ -58,21 +58,25 @@ class Hashtable :
         for char in key :
             sum+=ord(char)
         sum = (sum*23) % self.size
-        return key
+        return sum
 
     def add(self,value,key):
         hashed_key = self.hash(key)
         if not self.buckets[hashed_key]:
             self.buckets[hashed_key] = LinkedList()
         self.buckets[hashed_key].insert([key,value])
+        return True
 
     def get(self,key):
         hashed_key = self.hash(key)
+        node = self.buckets[hashed_key]
+        if not node :
+            return None
         node = self.buckets[hashed_key].head
         while node:
-            node = node.next
             if key == node.data[0] :
                 return node.data[1]
+            node = node.next
 
     def contains(self,key):
         hashed_key = self.hash(key)
@@ -80,10 +84,15 @@ class Hashtable :
             return True
         return False
 
+    def __str__(self):
+        return str(self.buckets)
+
 
 
 
 
 if __name__ == "__main__":
-    print('MAIN')
+    hashtable = Hashtable()
+    # hashtable.add('vale_1','key')
+    print(hashtable.hash('za'))
 
