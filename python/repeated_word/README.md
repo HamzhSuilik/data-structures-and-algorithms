@@ -6,17 +6,17 @@ Example : "Once upon a time, there was a brave princess who..." --> a
 
 ## Approach & Efficiency
 BigO :
-- Time : O(n^2)
+- Time : O(n)
 - Space : O(n)
 
 ## Solution
-- define function accept array and string for check if the String is exists in the array
-- define a repeated_word function which convert the string input in to array and loop in the array to match the repeated word using previous function check if the
+- define a repeated_word function which convert the string input in to array and loop in the array and then use hash map to add the words of the input and then check if the word is already existing
 
 #  Pull request :
 https://github.com/HamzhSuilik/data-structures-and-algorithms/pull/37
+https://github.com/HamzhSuilik/data-structures-and-algorithms/pull/40
 
-- [x] write check_if_exist function
+- [x] import hash map class
 - [x] write repeated_word function
 - [x] prepare README file
 - [x] prepare whiteboard
