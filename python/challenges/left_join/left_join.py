@@ -1,5 +1,5 @@
 from re import I
-
+#
 
 try :
     from hashtable import Hashtable
@@ -8,7 +8,7 @@ except:
 
 def left_join(hash_1,hash_2):
     arr = []
-    for item in hash_1.buckets:
+    for item in hash_1.get_data():
         if item :
             arr.append(item.head.data)
     for item in arr:

@@ -15,7 +15,7 @@ Space -> O(1)
 
 ## pull Request :
 https://github.com/HamzhSuilik/data-structures-and-algorithms/pull/41
-
+https://github.com/HamzhSuilik/data-structures-and-algorithms/pull/47
 
 - [x] create left_join.py and test files
 - [x] write left_join function

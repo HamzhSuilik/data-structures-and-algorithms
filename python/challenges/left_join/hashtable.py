@@ -84,6 +84,9 @@ class Hashtable :
             return True
         return False
 
+    def get_data(self):
+        return self.buckets
+
     def __str__(self):
         return str(self.buckets)
 
