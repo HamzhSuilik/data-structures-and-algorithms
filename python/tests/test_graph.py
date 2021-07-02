@@ -96,5 +96,51 @@ def test_8():
 
     assert actual == expected
 
+# @@@@@@@@@@@@ breadth first tests @@@@@@@@@@@@@@@
+def test_breadth_first_1():
+    graph = Graph()
+    node_1 = graph.add_node('1')
+    actual = graph.breadth_first(node_1)
+    expected = [node_1]
+
+    assert actual == expected
+
+def test_breadth_first_2():
+    graph = Graph()
+    node_1 = graph.add_node('1')
+    node_2 = graph.add_node('10')
+    node_3 = graph.add_node('20')
+    node_4 = graph.add_node('100')
+    graph.add_edge(node_1 , node_2 , 0)
+    graph.add_edge(node_1 , node_3 , 1)
+    graph.add_edge(node_3 , node_4 , 1)
+    actual = graph.breadth_first(node_1)
+    expected = [node_1,node_2,node_3,node_4]
+
+    assert actual == expected
+
+
+def test_breadth_first_3():
+    graph = Graph()
+    node_1 = graph.add_node('1')
+    node_2 = graph.add_node('10')
+    node_3 = graph.add_node('20')
+    node_4 = graph.add_node('100')
+    node_5 = graph.add_node('1000')
+    node_6 = graph.add_node('2000')
+
+    graph.add_edge(node_1 , node_2 , 0)
+    graph.add_edge(node_1 , node_3 , 1)
+    graph.add_edge(node_2 , node_4 , 1)
+    graph.add_edge(node_2 , node_5 , 1)
+    graph.add_edge(node_3 , node_6 , 1)
+
+    graph.add_edge(node_5 , node_3 , 1)
+    graph.add_edge(node_6 , node_2 , 1)
+
+    actual = graph.breadth_first(node_1)
+    expected = [node_1,node_2,node_3,node_4,node_5,node_6]
+
+    assert actual == expected
 
 print('')
