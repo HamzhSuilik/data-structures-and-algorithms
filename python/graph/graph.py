@@ -1,7 +1,7 @@
 try:
-    from stacks_and_queues import Queue
+    from stacks_and_queues import Queue,Stack
 except:
-    from graph.stacks_and_queues import Queue
+    from graph.stacks_and_queues import Queue,Stack
 
 class Vertex:
     def __init__(self,value):
@@ -65,27 +65,43 @@ class Graph:
         walk ()
         return items
 
+    def depth_first(self,root):
+        visited = []
+        items = []
+        if not root :
+            return []
+        stack = Stack()
+        stack.push(root)
+        visited.append(root)
 
+        def walk ():
+            node = stack.pop().value
+            items.append(node)
+            for neighbor in self.get_neighbors(node) :
+                if neighbor.vertex not in visited :
+                    stack.push(neighbor.vertex)
+                    visited.append(neighbor.vertex)
+                    walk ()
+
+
+        walk ()
+
+        while not stack.isEmpty():
+            items.append(stack.pop().value.value)
+        return items
 
 
 if __name__ == "__main__":
+    # https://miro.com/app/board/o9J_l8KPhTQ=/
     graph = Graph()
     node_1 = graph.add_node('1')
-    node_2 = graph.add_node('10')
-    node_3 = graph.add_node('20')
-    node_4 = graph.add_node('100')
-    node_5 = graph.add_node('1000')
-    node_6 = graph.add_node('2000')
-
+    node_2 = graph.add_node('2')
+    node_3 = graph.add_node('3')
+    node_4 = graph.add_node('4')
     graph.add_edge(node_1 , node_2 , 0)
-    graph.add_edge(node_1 , node_3 , 1)
-    graph.add_edge(node_2 , node_4 , 1)
-    graph.add_edge(node_2 , node_5 , 1)
-    graph.add_edge(node_3 , node_6 , 1)
+    graph.add_edge(node_1 , node_3 , 0)
+    graph.add_edge(node_2 , node_4 , 0)
 
-    # graph.add_edge(node_5 , node_3 , 1)
-    graph.add_edge(node_6 , node_2 , 1)
-
-
-    print (graph.breadth_first(node_1))
+    print(node_1)
+    print (graph.depth_first(node_1))
 

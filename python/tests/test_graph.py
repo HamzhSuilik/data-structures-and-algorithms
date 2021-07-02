@@ -143,4 +143,52 @@ def test_breadth_first_3():
 
     assert actual == expected
 
+
+
+# @@@@@@@@@@@@ depth first tests @@@@@@@@@@@@@@@
+def test_depth_first_1():
+    graph = Graph()
+    node_1 = graph.add_node('')
+    actual = graph.depth_first(node_1)
+    expected = [node_1]
+
+    assert actual == expected
+
+def test_depth_first_2():
+    graph = Graph()
+    node_1 = graph.add_node('')
+    node_2 = graph.add_node('')
+    node_3 = graph.add_node('')
+    node_4 = graph.add_node('')
+    graph.add_edge(node_1 , node_2 , 0)
+    graph.add_edge(node_1 , node_3 , 0)
+    graph.add_edge(node_2 , node_4 , 0)
+    actual = graph.depth_first(node_1)
+    expected = [node_1,node_2,node_4,node_3]
+    assert actual == expected
+
+
+def test_depth_first_3():
+    graph = Graph()
+    node_1 = graph.add_node('')
+    node_2 = graph.add_node('')
+    node_3 = graph.add_node('')
+    node_4 = graph.add_node('')
+    node_5 = graph.add_node('')
+    node_6 = graph.add_node('')
+
+    graph.add_edge(node_1 , node_2 , 0)
+    graph.add_edge(node_1 , node_3 , 0)
+    graph.add_edge(node_2 , node_4 , 0)
+    graph.add_edge(node_2 , node_5 , 0)
+    graph.add_edge(node_3 , node_6 , 0)
+
+    graph.add_edge(node_5 , node_3 , 0)
+    graph.add_edge(node_6 , node_2 , 0)
+
+    actual = graph.depth_first(node_1)
+    expected = [node_1,node_2,node_4,node_5,node_3,node_6]
+
+    assert actual == expected
+
 print('')
