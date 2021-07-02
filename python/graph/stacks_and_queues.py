@@ -17,6 +17,7 @@ class Stack :
       temp = self.top
       self.top = self.top.next
       temp.next = None
+      return temp
 
   def peek (self):
     if self.top :
